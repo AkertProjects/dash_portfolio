@@ -8,4 +8,3 @@ COPY requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
 COPY ./ /app
 WORKDIR /app
-CMD gunicorn --bind 0.0.0.0:8050 -t 120 --log-level=debug -w 4 index:server
