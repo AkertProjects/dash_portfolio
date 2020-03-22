@@ -67,7 +67,7 @@ def layout():
                                      row_selectable='single',
                                      selected_rows=[],
                                      style_table={
-                                         'maxHeight': '1026px',
+                                         'maxHeight': '800px',
                                          'overflowY': 'scroll'
                                      }
                                      )
