@@ -2,13 +2,9 @@ import dash_html_components as html
 import dash_core_components as dcc
 from dash.dependencies import Input, Output
 import dash_table
-import pandas as pd
 import plotly.express as px
 import json
-from io import StringIO
-import requests
 import uuid
-import re
 
 # local
 
@@ -20,7 +16,7 @@ def get_coronavirus_data(session_id):
     s3 = helpers.open_s3fs_connection()
     with s3.open('erik-akert-dash-public/coronavirus/counties.json', 'r') as f:
         counties = json.loads(f.read())
-    county_data = helpers.get_s3_data_to_df('erik-akert-dash-public', 'coronavirus/county_data', file_type='parquet')
+    county_data = helpers.get_s3_data_to_df('erik-akert-dash-public', 'coronavirus/county_data')
     return county_data, counties
 
 
