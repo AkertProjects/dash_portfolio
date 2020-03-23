@@ -1,1 +1,1 @@
-web: gunicorn -t 120 --log-level=debug -w 4 index:server
+web: gunicorn -t 120 --log-level=debug index:server
